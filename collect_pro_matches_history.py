@@ -71,4 +71,4 @@ df = spark.read.format("json").load(aws_path + "pro_matches.history")
 
 # COMMAND ----------
 
-df.groupBy
+df.groupBy().min("match_id").collect()[0][0]
